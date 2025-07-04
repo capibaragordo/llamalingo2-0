@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='registro.css') }}">
+</head>
+<body>
+
+  <!-- 🎥 Video de fondo -->
+  <video autoplay muted loop id="video-fondo">
+    <source src="{{ url_for('static', filename='The Drive - ft HOME - Resonance.mp4') }}" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <!-- 🔗 Botón de Login arriba a la derecha -->
+  <a href="{{ url_for('home') }}" class="boton-login">Regresar a login</a>
+
+  <!-- 🧱 Contenedor del formulario -->
+  <div class="contenedor-registro">
+    <h2>Crear cuenta</h2>
+
+    {% with mensajes = get_flashed_messages() %}
+      {% if mensajes %}
+        {% for mensaje in mensajes %}
+          <p style="color: lightgreen;">{{ mensaje }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('registro') }}">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="password" name="clave" placeholder="Contraseña" required>
+      <input type="password" name="clave2" placeholder="Confirmar contraseña" required>
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+</body>
+</html>

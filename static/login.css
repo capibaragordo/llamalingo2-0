@@ -1,0 +1,62 @@
+/* 🎥 Video de fondo */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* 🧱 Caja del login */
+.contenedor-login {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* 🖼 Logo */
+.logo {
+  width: 200px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px rgb(235, 187, 231))
+}
+
+/* Inputs y botones */
+input, button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+input {
+  background-color: #fff;
+  color: #000;
+}
+
+button {
+  background-color: #ff5f5f;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff3b3b;
+}
